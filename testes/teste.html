@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalize First Letters</title>
+</head>
+<body>
+    <textarea id="inputText" rows="4" cols="50" placeholder="Digite seu texto aqui..."></textarea>
+    <button id="capitalizeButton">Capitalizar</button>
+    <p id="outputText"></p>
+
+    <form id="meuForm">
+        <label>
+            <input type="radio" name="opcao" value="opcao1"> Opção 1
+        </label>
+        <label>
+            <input type="radio" name="opcao" value="opcao2"> Opção 2
+        </label>
+        <label>
+            <input type="radio" name="opcao" value="opcao3"> Opção 3
+        </label>
+        <button type="button" onclick="capturarValor()">Enviar</button>
+    </form>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function capturarValor() {
+            // Seleciona o radio marcado
+            let selecionado = document.querySelector('input[name="opcao"]:checked');
+    
+            // Verifica se alguma opção foi selecionada
+            if (selecionado) {
+                let valorSelecionado = selecionado.value;
+                document.getElementById("resultado").innerText = "Opção selecionada: " + valorSelecionado;
+                console.log(valorSelecionado); // Pode ser usado para armazenar em uma variável
+            } else {
+                alert("Por favor, selecione uma opção.");
+            }
+        }
+
+        function capitalizeFirstLetters(str) {
+            return str.split(' ')
+                      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                      .join(' ');
+        }
+
+        document.getElementById('capitalizeButton').addEventListener('click', function() {
+            const inputText = document.getElementById('inputText').value;
+            const capitalizedText = capitalizeFirstLetters(inputText);
+            document.getElementById('outputText').innerText = capitalizedText;
+        });
+    </script>
+</body>
+</html>

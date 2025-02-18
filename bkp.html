@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Desk Generator</h1>
+            
+        <form id="generateForm" action="">     
+
+            <div id="greetings-container">
+                <input type="radio" name="gre_gender" id="prezado" value="Prezado">
+                <label for="prezado">Prezado</label>
+                <input type="radio" name="gre_gender" id="prezada" value="Prezada">
+                <label for="prezada">Prezada</label>
+                <input type="radio" name="gre_gender" id="prezade" value="Prezade">
+                <label for="prezade">Prezade</label>
+                <input type="text" id="clientName" name="clientName" placeholder="Cliente">
+            </div>
+
+            <div id="description-container">
+                <label for="descriptionInput">Descrição da Situação:</label>
+                <textarea name="description" id="descriptionInput"></textarea>
+            </div>
+
+            <div id="contact-channel">
+                <label>Canal de Contato:</label>
+                <div>
+                    <input type="checkbox" id="cc-whats" name="whats">
+                    <label for="cc-whats">WhatsApp</label>
+                    <input type="text" name="whatsInput">
+                </div>
+
+                <div>
+                    <input type="checkbox" id="cc-mail" name="mail">
+                    <label for="cc-mail">E-mail</label>
+                    <input type="text" name="mailInput">
+                </div>
+
+                <div>
+                    <input type="checkbox" id="cc-phone" name="phone">
+                    <label for="cc-phone">Telefone</label>
+                    <input type="text" name="phoneInput">
+                </div>
+            </div>
+
+            <div id="internal-obs">
+                <label>Observações Internas:</label>
+                <p>Contato</p>
+                <input type="text" name="client-cc" id="client-cc">
+                <p>Host</p>
+                <input type="text" name="client-host" id="client-host">
+                <p>Link de atendimento</p>
+                <input type="text" name="client-link" id="client-link">
+            </div>
+
+            <input type="button" value="Gerar Chamado" onclick="generateForm()">
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
