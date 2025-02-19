@@ -1,7 +1,13 @@
+function capitalizeFirstLetterOfEachWord(str) {
+    return str.split(' ') // Divide a string em palavras
+              .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitaliza a primeira letra de cada palavra
+              .join(' '); // Junta as palavras de volta em uma string
+}
+
 document.getElementById('generateButton').addEventListener('click', function() {
     // Obtendo os valores do formulário
     const saudacao = document.querySelector('input[name="gre_gender"]:checked').value;
-    const nome = document.getElementById('clientName').value;
+    const nome = capitalizeFirstLetterOfEachWord(document.getElementById('clientName').value);
     const descricao = document.getElementById('descriptionInput').value;
     
     // Determinando a saudação com base no horário

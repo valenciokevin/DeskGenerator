@@ -75,12 +75,14 @@
                 <input type="text" name="client-link" id="client-link" placeholder="Link de Atendimento">
             </fieldset>
 
-            <input type="button" id="generateButton" value="Gerar Chamado">
-            <input type="button" id="newTabButton" value="Gerar Nova Guia">
-            <input type="button" id="clearButton" value="Limpar Campos">
+            <div class="button-container">
+                <input type="button" id="generateButton" value="Gerar Chamado">
+                <input type="button" id="newTabButton" value="Gerar Nova Guia">
+                <input type="button" id="clearButton" value="Limpar Campos">
+            </div>
         </form>
 
-        <fieldset>
+        <fieldset id="output-message">
             <legend>Mensagem Gerada</legend>
             <pre id="generatedMessage"></pre>
         </fieldset>
