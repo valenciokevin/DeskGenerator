@@ -16,7 +16,7 @@
                 <legend>Saudações</legend>
                 <div class="greetings-container">
                     <div class="greetings-option">
-                        <input type="radio" name="gre_gender" id="prezado" value="Prezado" aria-label="Prezado">
+                        <input type="radio" name="gre_gender" id="prezado" value="Prezado" aria-label="Prezado" required>
                         <label for="prezado">Prezado</label>
                     </div>
                     
@@ -24,7 +24,6 @@
                         <input type="radio" name="gre_gender" id="prezada" value="Prezada" aria-label="Prezada">
                         <label for="prezada">Prezada</label>
                     </div>
-                    
                 </div>
                 <input type="text" id="clientName" name="clientName" placeholder="Nome do Cliente" required>
             </fieldset>
@@ -58,11 +57,10 @@
     
                     <div class="cc-option">
                         <input type="checkbox" id="cc-ramal" name="ramal">
-                        <label for="cc-phone">Ramal</label>
+                        <label for="cc-ramal">Ramal</label>
                         <input type="text" name="ramalInput" placeholder="Ramal">
                     </div>
                 </div>
-                
             </fieldset>
 
             <fieldset id="internal-obs">
@@ -77,8 +75,15 @@
                 <input type="text" name="client-link" id="client-link" placeholder="Link de Atendimento">
             </fieldset>
 
-            <input type="submit" value="Gerar Chamado">
+            <input type="button" id="generateButton" value="Gerar Chamado">
+            <input type="button" id="newTabButton" value="Gerar Nova Guia">
+            <input type="button" id="clearButton" value="Limpar Campos">
         </form>
+
+        <fieldset>
+            <legend>Mensagem Gerada</legend>
+            <pre id="generatedMessage"></pre>
+        </fieldset>
     </div>
     
     <script src="script.js"></script>
