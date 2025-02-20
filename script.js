@@ -47,7 +47,7 @@ document.getElementById('generateButton').addEventListener('click', function() {
     const message = `
 ${saudacao} ${nome}, ${time}!
 
-Conforme conversamos pelo telefone, o seu chamado foi registrado e a sua solicitação está sendo atendida por um de nossos analistas, em breve retornaremos um feedback. Segue abaixo a descrição de sua solicitação:
+Conforme conversamos pelo WhatsApp, o seu chamado foi registrado e a sua solicitação está sendo atendida por um de nossos analistas, em breve retornaremos um feedback. Segue abaixo a descrição de sua solicitação:
 
 Descrição da Solicitação: ${descricao}
 
