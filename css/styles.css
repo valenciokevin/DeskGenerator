@@ -5,8 +5,15 @@ body {
     padding: 20px;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
 .container {
-    max-width: 800px; /* Limita a largura máxima do container */
     margin: auto;
     background: white;
     padding: 20px;
@@ -17,7 +24,12 @@ body {
 h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    margin: 0; /* Espaçamento abaixo do título */
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 fieldset {
@@ -68,7 +80,7 @@ textarea {
 }
 
 textarea {
-    height: 150px;
+    height: 125px;
     resize: vertical; /* Permite redimensionar verticalmente */
 }
 
@@ -78,9 +90,11 @@ textarea {
     justify-content: space-between; /* Espaça os botões igualmente */
 }
 
-input[type="button"] {
+input[type="button"], button {
+    max-width: 150px;
     color: white;
     padding: 10px 15px;
+    border: 0;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -88,6 +102,12 @@ input[type="button"] {
     margin: 0 5px; /* Espaçamento entre os botões */
     transition: background-color 0.3s; /* Transição suave para a cor de fundo */
 }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
 
 #generateButton {
     background-color: #5cb85c; /* Verde */
@@ -101,7 +121,20 @@ input[type="button"] {
     background-color: #d9534f; /* Vermelho */
 }
 
-input[type="button"]:hover {
+#copyButton {
+    background-color: #007bff;
+    margin-bottom: 20px;
+}
+
+.internal-obs-button-container {
+    margin: 10px;
+}
+
+button, .insert-obs-button {
+    background-color: #007bff;
+}
+
+button:hover, input[type="button"]:hover {
     opacity: 0.9; /* Efeito de hover para todos os botões */
 }
 
@@ -117,6 +150,7 @@ textarea:focus {
 }
 
 #generatedMessage {
+    height: 500px;
     background-color: #e9ecef; /* Fundo levemente cinza para a mensagem gerada */
     padding: 10px;
     border-radius: 5px;
@@ -132,4 +166,67 @@ textarea:focus {
     input[type="button"] {
         padding: 10px;
     }
+}
+
+/*TEXT EDITOR*/
+#textArea {
+    box-sizing: border-box;
+}
+.input-container {
+    margin-bottom: 20px;
+}
+
+#inputText {
+    width: 100%;
+    height: 175px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    resize: none;
+}
+
+.input-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#clearBtn {
+    background-color: #d9534f;
+}
+
+#whatsBtn {
+    background-color: #25d366;
+}
+
+.output-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.output-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.output-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.output-text {
+    width: 100%;
+    height: 75px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: none;
 }

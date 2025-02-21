@@ -42,6 +42,7 @@ document.getElementById('generateButton').addEventListener('click', function() {
     const contato = document.getElementById('client-cc').value;
     const host = document.getElementById('client-host').value;
     const link = document.getElementById('client-link').value;
+    const internalObs = document.getElementById('internal-obs').value;
 
     // Montando a mensagem final    
     const message = `
@@ -65,9 +66,12 @@ Ramal Suporte: 9999
 Contato: ${contato}
 Host: ${host}
 Link de atendimento: ${link}
+
+${internalObs}
     `;
 
     // Exibe a mensagem gerada
+    document.getElementById("output-message").style.display = 'block';
     document.getElementById("generatedMessage").textContent = message;
 });
 
@@ -81,4 +85,68 @@ document.getElementById('newTabButton').addEventListener('click', function() {
 document.getElementById('clearButton').addEventListener('click', function() {
     document.getElementById('generateForm').reset(); // Limpa todos os campos do formulário
     document.getElementById('generatedMessage').style.display = 'none'; // Esconde a mensagem
+    document.getElementById('output-message').style.display = 'none';
 });
+
+function copyText(id) {
+    let text = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(text);
+    document.getElementById('validaCopy').style.display = 'block';
+
+}
+
+const atalhoObs = {
+ramalButton: 
+`Agente: 
+Ramal: 
+Modelo: 
+IP: 
+AnyDesk: `,
+
+midiaButton: 
+`Mídia Social: 
+Provedor: 
+
+Integração: 
+Campanha: 
+
+Exemplos:
+	
+`,
+
+linhaButton: 
+`Linha/Tronco: 
+Operadora: 
+
+Agente: 
+Ramal: 
+Modelo: 
+IP: 
+AnyDesk: 
+
+Campanha: 
+Integração: 
+
+Quantidade:
+	Um
+	Vários
+	Todos
+
+Problema ocorre entre ramais?
+	Sim
+	Não
+
+Instância:
+	Entrada
+	Saída
+	Ambos Entrada e Saída
+	
+Exemplos:
+	
+`
+}
+
+function insereAtalhoInterno(botaoId) {
+    var textareaInterno = document.getElementById('internal-obs');
+    textareaInterno.value += atalhoObs[botaoId] + '\n';
+}

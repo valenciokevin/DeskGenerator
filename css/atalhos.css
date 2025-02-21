@@ -1,0 +1,19 @@
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#mensagem-atalho {
+    max-width: 800px;
+}
+
+#atalhos-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.atalho-btn {
+    width: 150px;
+    border: 1px solid black;
+}

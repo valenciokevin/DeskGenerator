@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Editor</h1>
+            <nav>     
+                <button><a href="index.html">Generator</a></button>
+                <button><a href="editor.html">Editor</a></button>
+                <button><a href="atalhos.html">Atalhos</a></button>
+            </nav>
+        </header>
+        
+        <div class="textarea-container">
+            <textarea class="input-text" id="inputText" placeholder="Digite aqui..." oninput="updateText()"></textarea>
+            <div class="input-button-container">
+                <button id="clearBtn" onclick="clearInput('inputText'); updateText('inputText')">Clear</button>
+                <button id="whatsBtn" onclick="whatsNumber()">Whats</button>
+            </div>
+        </div>
+
+        <div class="output-container">
+            <div class="output-item">
+                <div class="output-label">
+                    <label for="">Upper</label>
+                    <button class="copy-btn" onclick="copyText('upperTextOutput')">Copy</button>
+                </div>
+                <textarea id="upperTextOutput" class="output-text" readonly></textarea>
+            </div>
+
+            <div class="output-item">
+                <div class="output-label">
+                    <label for="">Lower</label>
+                    <button class="copy-btn" onclick="copyText('lowerCaseOutput')">Copy</button>
+                </div>
+                <textarea id="lowerCaseOutput" class="output-text" readonly></textarea>
+            </div>
+
+            <div class="output-item">
+                <div class="output-label">
+                    <label for="">No Spaces</label>
+                    <button class="copy-btn" onclick="copyText('noSpacesOutput')">Copy</button>
+                </div>
+                <textarea id="noSpacesOutput" class="output-text" readonly></textarea>
+            </div>
+
+            <div class="output-item">
+                <div class="output-label">
+                    <label for="">Numbers</label>
+                    <button class="copy-btn" onclick="copyText('onlyNumbersOutput')">Copy</button>
+                </div>
+                <textarea id="onlyNumbersOutput" class="output-text" readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/editor.js"></script>    
+</body>
+</html>

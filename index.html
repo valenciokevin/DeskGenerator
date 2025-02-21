@@ -3,77 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Document</title>
 </head>
 <body>
+
+    
     <div class="container">
-        <h1>Desk Generator</h1>
+        <header>
+            <h1>Generator</h1>
+            <nav>     
+                <button><a href="index.html">Generator</a></button>
+                <button><a href="editor.html">Editor</a></button>
+                <button><a href="atalhos.html">Atalhos</a></button>
+            </nav>
+        </header>
+        
+        <form id="generateForm" action="">
             
-        <form id="generateForm" action="">     
-
-            <fieldset id="greetings-container">
-                <legend>Saudações</legend>
-                <div class="greetings-container">
-                    <div class="greetings-option">
-                        <input type="radio" name="gre_gender" id="prezado" value="Prezado" aria-label="Prezado" required>
-                        <label for="prezado">Prezado</label>
-                    </div>
+            <div id="grid-container">
+                <!--<fieldset id="greetings-container">
+                    <legend>Saudações</legend>
                     
-                    <div class="greetings-option">
-                        <input type="radio" name="gre_gender" id="prezada" value="Prezada" aria-label="Prezada">
-                        <label for="prezada">Prezada</label>
-                    </div>
-                </div>
-                <input type="text" id="clientName" name="clientName" placeholder="Nome do Cliente" required>
-            </fieldset>
-
-            <fieldset id="description-container">
-                <legend>Descrição da Situação</legend>
-                <label for="descriptionInput">Descrição:</label>
-                <textarea name="description" id="descriptionInput" required></textarea>
-            </fieldset>
-
-            <fieldset id="contact-channel">
-                <legend>Canal de Contato</legend>
-                <div class="contact-channel">
-                    <div class="cc-option">
-                        <input type="checkbox" id="cc-whats" name="whats">
-                        <label for="cc-whats">WhatsApp</label>
-                        <input type="text" name="whatsInput" placeholder="WhatsApp">
-                    </div>
+                </fieldset>-->
     
-                    <div class="cc-option">
-                        <input type="checkbox" id="cc-mail" name="mail">
-                        <label for="cc-mail">E-mail</label>
-                        <input type="text" name="mailInput" placeholder="E-mail">
-                    </div>
-    
-                    <div class="cc-option">
-                        <input type="checkbox" id="cc-phone" name="phone">
-                        <label for="cc-phone">Telefone</label>
-                        <input type="text" name="phoneInput" placeholder="Telefone">
-                    </div>
-    
-                    <div class="cc-option">
-                        <input type="checkbox" id="cc-ramal" name="ramal">
-                        <label for="cc-ramal">Ramal</label>
-                        <input type="text" name="ramalInput" placeholder="Ramal">
-                    </div>
-                </div>
-            </fieldset>
+                <fieldset id="description-container">
 
-            <fieldset id="internal-obs">
-                <legend>Observações Internas</legend>
-                <label for="client-cc">Contato:</label>
-                <input type="text" name="client-cc" id="client-cc" placeholder="Contato Interno">
+                    <div class="greetings-container">
+                        <div class="greetings-option">
+                            <input type="radio" name="gre_gender" id="prezado" value="Prezado" aria-label="Prezado" required>
+                            <label for="prezado">Prezado</label>
+                        </div>
+                        
+                        <div class="greetings-option">
+                            <input type="radio" name="gre_gender" id="prezada" value="Prezada" aria-label="Prezada">
+                            <label for="prezada">Prezada</label>
+                        </div>
+                    </div>
+                    <input type="text" id="clientName" name="clientName" placeholder="Nome do Cliente" required>
+
+
+                    <legend>Descrição da Situação</legend>
+                    <label for="descriptionInput">Descrição</label>
+                    <textarea name="description" id="descriptionInput" required></textarea>
+
+                    <fieldset id="contact-channel">
+                        <legend>Canal de Contato</legend>
+                        <div class="contact-channel">
+                            <div class="cc-option">
+                                <input type="checkbox" id="cc-whats" name="whats">
+                                <label for="cc-whats">WhatsApp</label>
+                                <input type="text" name="whatsInput" placeholder="WhatsApp">
+                            </div>
+            
+                            <div class="cc-option">
+                                <input type="checkbox" id="cc-mail" name="mail">
+                                <label for="cc-mail">E-mail</label>
+                                <input type="text" name="mailInput" placeholder="E-mail">
+                            </div>
+            
+                            <div class="cc-option">
+                                <input type="checkbox" id="cc-phone" name="phone">
+                                <label for="cc-phone">Telefone</label>
+                                <input type="text" name="phoneInput" placeholder="Telefone">
+                            </div>
+            
+                            <div class="cc-option">
+                                <input type="checkbox" id="cc-ramal" name="ramal">
+                                <label for="cc-ramal">Ramal</label>
+                                <input type="text" name="ramalInput" placeholder="Ramal">
+                            </div>
+                        </div>
+                    </fieldset>
+                </fieldset>
+     
+                <fieldset id="internal">
+                    <legend>Interno</legend>
+                    <label for="client-cc">Contato</label>
+                    <input type="text" name="client-cc" id="client-cc" placeholder="Contato Interno">
+                    
+                    <label for="client-host">Host</label>
+                    <input type="text" name="client-host" id="client-host" placeholder="Host">
+                    
+                    <label for="client-link">Link de Atendimento</label>
+                    <input type="text" name="client-link" id="client-link" placeholder="Link de Atendimento">
+
+                    <div class="internal-obs-button-container">
+                        <input type="button" name="ramal-button" id="ramalButton" class="insert-obs-button" value="Ramal" onclick="insereAtalhoInterno(this.id)">
+                        <input type="button" name="midia-button" id="midiaButton" class="insert-obs-button" value="Mídia" onclick="insereAtalhoInterno(this.id)">
+                        <input type="button" name="linha-button" id="linhaButton" class="insert-obs-button" value="Linha" onclick="insereAtalhoInterno(this.id)">
+                    </div>
                 
-                <label for="client-host">Host:</label>
-                <input type="text" name="client-host" id="client-host" placeholder="Host">
+                    <label for="">Observações</label>
+                    <textarea name="internal-obs" id="internal-obs"></textarea>
                 
-                <label for="client-link">Link de Atendimento:</label>
-                <input type="text" name="client-link" id="client-link" placeholder="Link de Atendimento">
-            </fieldset>
+                </fieldset>
+            </div>
 
             <div class="button-container">
                 <input type="button" id="generateButton" value="Gerar Chamado">
@@ -82,12 +107,18 @@
             </div>
         </form>
 
-        <fieldset id="output-message">
+        <fieldset id="output-message" style="display: none;">
             <legend>Mensagem Gerada</legend>
-            <pre id="generatedMessage"></pre>
+
+            <div>
+                <input type="button" id="copyButton" value="Copy" onclick="copyText('generatedMessage')">
+                <label id="validaCopy" style="display: none; margin-bottom: 20px;">Copiado com Sucesso!</label>
+            </div>
+
+            <textarea id="generatedMessage"></textarea>
         </fieldset>
     </div>
     
-    <script src="script.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
