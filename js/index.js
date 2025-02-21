@@ -45,7 +45,8 @@ document.getElementById('generateButton').addEventListener('click', function() {
     const internalObs = document.getElementById('internal-obs').value;
 
     // Montando a mensagem final    
-    const message = `
+    let message = ""; 
+    message = `
 ${saudacao} ${nome}, ${time}!
 
 Conforme conversamos pelo WhatsApp, o seu chamado foi registrado e a sua solicitação está sendo atendida por um de nossos analistas, em breve retornaremos um feedback. Segue abaixo a descrição de sua solicitação:
@@ -66,12 +67,12 @@ Ramal Suporte: 9999
 Contato: ${contato}
 Host: ${host}
 Link de atendimento: ${link}
-
 ${internalObs}
     `;
 
     // Exibe a mensagem gerada
     document.getElementById("output-message").style.display = 'block';
+    document.getElementById('generatedMessage').style.display = 'block';
     document.getElementById("generatedMessage").textContent = message;
 });
 

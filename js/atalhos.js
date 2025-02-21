@@ -118,16 +118,6 @@ Exemplos:
 	`,
 }
 
-
-
-
-
-
-
-
-
-
-
 function insertAtalho (atalhoId) {
     var textarea = document.getElementById('output-atalho');
     textarea.value += atalhos[atalhoId] + '\n';
