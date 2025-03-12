@@ -102,7 +102,8 @@ ramalButton:
 Ramal: 
 Modelo: 
 IP: 
-AnyDesk: `,
+AnyDesk: 
+`,
 
 midiaButton: 
 `Mídia Social: 
@@ -112,7 +113,6 @@ Integração:
 Campanha: 
 
 Exemplos:
-	
 `,
 
 linhaButton: 
@@ -142,8 +142,7 @@ Instância:
 	Saída
 	Ambos Entrada e Saída
 	
-Exemplos:
-	
+Exemplos:	
 `
 }
 

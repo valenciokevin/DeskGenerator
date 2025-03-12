@@ -1,3 +1,7 @@
+
+
+
+
 const atalhos = {
 inicio:`Olá __Cliente__, tudo bem?
 
